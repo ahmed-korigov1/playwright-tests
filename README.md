@@ -25,3 +25,9 @@
 pip install pytest playwright pytest-html
 playwright install
 pytest
+
+## Запуск через Docker
+
+```bash
+docker build -t playwright-tests .
+docker run --rm playwright-tests
