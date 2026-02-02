@@ -1,3 +1,4 @@
+from pages.base_page import BasePage
 from locators.login_locators import (
     USERNAME_INPUT,
     PASSWORD_INPUT,
@@ -5,15 +6,12 @@ from locators.login_locators import (
 )
 
 
-class LoginPage:
-
-    def __init__(self, page):
-        self.page = page
+class LoginPage(BasePage):
 
     def open(self):
-        self.page.goto(self.page.base_url)
+        self.go_to(self.page.base_url)
 
     def login(self, user, password):
-        self.page.fill(USERNAME_INPUT, user)
-        self.page.fill(PASSWORD_INPUT, password)
-        self.page.click(LOGIN_BUTTON)
+        self.fill(USERNAME_INPUT, user)
+        self.fill(PASSWORD_INPUT, password)
+        self.click(LOGIN_BUTTON)
