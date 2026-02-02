@@ -7,7 +7,7 @@ class LoginPage:
         self.login_button = "#login-button"
 
     def open(self):
-        self.page.goto("https://www.saucedemo.com/")
+        self.page.goto(self.page.base_url)
 
     def login(self, user, password):
         self.page.fill(self.username_input, user)
