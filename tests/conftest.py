@@ -15,11 +15,14 @@ def pytest_addoption(parser):
 @pytest.fixture
 def page(request):
     env = request.config.getoption("--env")
-    base_url = ENVIRONMENTS[env]
+    env_config = ENVIRONMENTS[env]
+    base_url = env_config["base_url"]
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page()
         page.base_url = base_url
+        page.env_config = env_config
         yield page
         browser.close()
+

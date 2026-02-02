@@ -10,7 +10,10 @@ def test_full_buy_flow(page):
     checkout_page = CheckoutPage(page)
 
     login_page.open()
-    login_page.login("standard_user", "secret_sauce")
+    login_page.login(
+        page.env_config["username"],
+        page.env_config["password"]
+    )
 
     inventory_page.add_first_item_to_cart()
     inventory_page.open_cart()
