@@ -1,3 +1,5 @@
+[![Playwright Tests](https://github.com/ahmed-korigov1/playwright-tests/actions/workflows/tests.yml/badge.svg)](https://github.com/ahmed-korigov1/playwright-tests/actions/workflows/tests.yml)
+
 # Playwright + Pytest + CI example
 
 Этот проект демонстрирует внедрение e2e автотестов на Playwright с использованием Page Object и запуском в CI (GitHub Actions).
