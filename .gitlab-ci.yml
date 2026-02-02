@@ -1,0 +1,8 @@
+stages:
+  - test
+
+tests:
+  stage: test
+  image: mcr.microsoft.com/playwright/python:v1.41.0-jammy
+  script:
+    - pytest
